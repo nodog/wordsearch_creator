@@ -17,6 +17,11 @@ class WordSearch
   def create_wordsearch
     puts " all letters: #{@letters}"
 
+    words_by_uniq_letters = @wl.get_words_by_uniq_letters
+    words_by_uniq_letters.each do |w|
+      puts "uniq letters in word - #{w.to_s}"
+    end
+
     longest_len = @wl.get_longest_length
     height = @words.size
     ratio = height/longest_len

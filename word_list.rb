@@ -4,6 +4,7 @@ class WordList
 
   def initialize(word_list_name)
     @words = Array.new
+    @words_by_uniq_letters = Array.new
     @words_list_file_name = word_list_name
   end
 
@@ -25,4 +26,10 @@ class WordList
     @longest.length
   end
 
+  def get_words_by_uniq_letters
+    @words.each do |w|
+      @words_by_uniq_letters << w.chars.to_a.uniq.sort.join
+    end
+    return @words_by_uniq_letters
+  end
 end
